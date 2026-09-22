@@ -6,6 +6,14 @@
 
 ---
 
+🚀 Live Demo
+
+Try ReqLens online:
+
+👉 [**ReqLens Live Demo**](https://reqlens-project-demo.streamlit.app/)
+
+---
+
 ## 🚀 Features
 
 * 🤖 **ML-based requirement classification**
