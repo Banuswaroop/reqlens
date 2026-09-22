@@ -1,292 +1,273 @@
 # 🔍 ReqLens
 
-**AI-powered software requirement ambiguity detector**
+### AI/ML-Based Software Requirement Ambiguity Detection & Analysis System
 
-ReqLens analyzes software requirements and identifies vague wording, missing constraints, and potential conflicts before they become development problems.
-
----
-
-## 📌 Problem
-
-Software requirements are often written using unclear or subjective language such as:
-
-* "The system should respond quickly."
-* "The application should be easy to use."
-* "Users should be able to upload large files."
-* "The system should provide high performance."
-
-These requirements may be difficult for developers and testers to implement because important details are not clearly defined.
-
-ReqLens helps identify these issues and suggests what information should be clarified.
+> ReqLens analyzes software requirements to detect **vague wording, missing constraints, and potential conflicts**, then provides explanations, suggestions, and improved requirements.
 
 ---
 
-## 🎯 Features
+## 🚀 Features
 
-* Detects **vague requirements**
-* Detects **missing constraints**
-* Detects **potential conflicts between requirements**
-* Uses a **Machine Learning classification model**
-* Uses **rule-based NLP analysis**
-* Generates clarification suggestions
-* Automatically monitors requirement files
-* Automatically generates analysis reports
-* Provides an interactive Streamlit interface
-* Maintains application logs
-* Supports multiple requirements at once
+* 🤖 **ML-based requirement classification**
+* 📝 **Vague-word detection**
+* 📏 **Missing quantitative information detection**
+* ⚙️ **Missing constraint detection**
+* ⚠️ **Requirement conflict detection**
+* 💡 **Automatic explanations & suggestions**
+* ✨ **Improved requirement generation**
+* 📊 **ML confidence & probability distribution**
+* 📄 **Automatic TXT & PDF reports**
+* 🔄 **File-change-based automation**
+* 🌐 **Streamlit web interface**
+* 🔌 **FastAPI REST API**
+* 🧪 **18 automated tests**
 
 ---
 
-## 🏗️ Project Architecture
+## 🎯 Problem
+
+Software requirements often contain unclear statements such as:
 
 ```text
-                    Software Requirements
-                            │
-                            ▼
-                   ┌─────────────────┐
-                   │   Input File    │
-                   │ / Streamlit UI  │
-                   └────────┬────────┘
-                            │
-                            ▼
-                   ┌─────────────────┐
-                   │   TF-IDF        │
-                   │  Vectorization  │
-                   └────────┬────────┘
-                            │
-                            ▼
-                   ┌─────────────────┐
-                   │ Logistic        │
-                   │ Regression ML   │
-                   └────────┬────────┘
-                            │
-                            ▼
-              ┌─────────────────────────────┐
-              │ Requirement Classification │
-              └─────────────┬───────────────┘
-                            │
-             ┌──────────────┼──────────────┐
-             ▼              ▼              ▼
-           CLEAR          VAGUE       MISSING
-                                     CONSTRAINT
-             │              │              │
-             └──────────────┼──────────────┘
-                            ▼
-                   Rule-Based Analysis
-                            │
-             ┌──────────────┼──────────────┐
-             ▼              ▼              ▼
-        Vague Words   Missing Details   Conflicts
-             │              │              │
-             └──────────────┼──────────────┘
-                            ▼
-                    Suggestions
-                            │
-                            ▼
-                     Analysis Report
+❌ "The system should be very fast."
+
+❌ "The website should be easy to use."
+
+❌ "Users should be able to upload reports."
+
+❌ "The system should handle many users."
+```
+
+These statements can be interpreted differently by developers and stakeholders.
+
+### ✅ ReqLens
+
+```text
+Requirement
+     ↓
+🤖 ML Classification
+     ↓
+🔎 NLP + Rule Analysis
+     ↓
+⚠️ Ambiguity / Conflict Detection
+     ↓
+💡 Suggestions
+     ↓
+✨ Improved Requirement
+     ↓
+📄 Report
 ```
 
 ---
 
-## 🤖 Machine Learning Workflow
+## 🤖 Machine Learning
 
-ReqLens uses a traditional supervised Machine Learning pipeline.
+ReqLens uses a traditional supervised ML pipeline:
 
 ```text
 Dataset
-   ↓
-Train/Test Split
    ↓
 TF-IDF Vectorization
    ↓
 Logistic Regression
    ↓
-Model Evaluation
-   ↓
-Save Model + Vectorizer
-   ↓
-Use Model for Predictions
+Requirement Category
 ```
 
-### Dataset
+### Categories
 
-The current dataset contains **150 synthetic software requirements**:
+| Category                | Description                        |
+| ----------------------- | ---------------------------------- |
+| 🟢 `CLEAR`              | Specific or measurable requirement |
+| 🔴 `VAGUE`              | Subjective or unclear wording      |
+| 🟡 `MISSING_CONSTRAINT` | Missing important limits/details   |
 
-| Category           | Examples |
-| ------------------ | -------: |
-| CLEAR              |       50 |
-| VAGUE              |       50 |
-| MISSING_CONSTRAINT |       50 |
-| **Total**          |  **150** |
+### 📊 Dataset
 
-The dataset is balanced across the three categories.
+**150 synthetic software requirements**
 
-### Features
+| Category           | Samples |
+| ------------------ | ------: |
+| CLEAR              |      50 |
+| VAGUE              |      50 |
+| MISSING_CONSTRAINT |      50 |
+| **Total**          | **150** |
 
-The text requirements are converted into numerical features using **TF-IDF (Term Frequency–Inverse Document Frequency)**.
+### 📈 Model Performance
 
-The classifier used is **Logistic Regression**.
+**93.3% test accuracy** on the held-out test set.
+
+A separate evaluation using **15 unseen requirements achieved 100% accuracy**.
+
+> ⚠️ The dataset is synthetic, so these results should not be interpreted as real-world performance.
 
 ---
 
-## 📊 Model Results
+## 🔎 Requirement Analysis
 
-The current model achieved:
-
-```text
-Test Accuracy: 93.3%
-```
-
-Classification performance on the test set:
+Example:
 
 ```text
-                    precision    recall    f1-score
+Requirement:
+"The website should be very easy to use."
 
-CLEAR                  1.00       1.00       1.00
-MISSING_CONSTRAINT     0.90       0.90       0.90
-VAGUE                  0.90       0.90       0.90
+Category:
+🔴 VAGUE
 
-Accuracy: 0.93
-```
+Severity:
+🔴 HIGH
 
-The evaluation uses a held-out test set from the current **synthetic dataset of 150 requirements**. Therefore, this result should not be interpreted as real-world production accuracy.
-
----
-
-## 🧠 Requirement Analysis
-
-After ML classification, ReqLens performs additional rule-based analysis.
-
-### Vague Words
-
-ReqLens detects words such as:
-
-```text
-quickly
-easy
-user-friendly
-efficient
-secure
-large
-many
-reliable
-scalable
-```
-
-For example:
-
-```text
-The application should load quickly.
-```
-
-ReqLens can identify:
-
-```text
-Vague Word:
-quickly
+Detected:
+"easy"
 
 Suggestion:
-Specify a maximum response or loading time,
-such as 2 seconds.
+Define measurable usability requirements
+or specific user actions.
+```
+
+ReqLens can also detect missing information related to:
+
+```text
+📁 File size / formats
+⏱️ Response time
+👥 User capacity
+💾 Data volume
+🔔 Notifications
+💳 Payments
+🔎 Search
+💿 Backups
+🗄️ Data retention
 ```
 
 ---
 
-### Missing Constraints
+## ⚠️ Conflict Detection
 
-ReqLens checks whether important details may be missing.
-
-Example:
+ReqLens can identify potentially conflicting requirements.
 
 ```text
-Users should be able to upload reports.
+Requirement 1:
+"The application must respond within 2 seconds."
+
+Requirement 2:
+"The application must respond at least 5 seconds."
+
+                    ↓
+
+⚠️ Potential response-time conflict
 ```
 
-ReqLens may suggest:
+It can also detect contradictory capacity constraints.
+
+---
+
+## 💡 Explanation & Improvement
 
 ```text
-Specify the maximum file size and
-allowed file formats.
+Original:
+"The system should be very fast."
+
+                    ↓
+
+✨ Improved:
+"The system must complete the requested
+operation within 2 seconds under the
+expected normal workload."
 ```
 
 ---
 
-### Potential Conflicts
+## 🌐 Web Interface
 
-ReqLens can also compare multiple requirements.
-
-Example:
+The Streamlit interface provides:
 
 ```text
-The system must respond within 2 seconds.
-
-The system should wait at least 10 seconds
-before responding.
-```
-
-ReqLens detects this as a potential response-time conflict.
-
----
-
-## ⚙️ Automation
-
-ReqLens includes a file-monitoring automation system.
-
-```text
-Developer modifies requirements_input.txt
-                    ↓
-              File change detected
-                    ↓
-              ReqLens starts analysis
-                    ↓
-               ML prediction
-                    ↓
-             Rule-based analysis
-                    ↓
-             Conflict detection
-                    ↓
-              Report generated
-                    ↓
-              Log entry created
-```
-
-The automation process checks the requirement file periodically.
-
-Current polling interval:
-
-```text
-2 seconds
-```
-
-The generated report is stored in:
-
-```text
-reports/reqlens_report.txt
-```
-
-Application logs are stored in:
-
-```text
-logs/reqlens.log
+📊 Dashboard
+🤖 ML Prediction
+📈 Confidence & Probability Distribution
+🔎 Detailed Analysis
+💡 Explanations
+✨ Improved Requirements
+⚠️ Conflict Detection
+📄 PDF Report Download
 ```
 
 ---
 
-## 🖥️ Streamlit Interface
+## 🔌 REST API
 
-ReqLens also provides an interactive web interface using Streamlit.
+Built with **FastAPI**.
 
-The interface allows users to:
+| Method | Endpoint         | Purpose                       |
+| ------ | ---------------- | ----------------------------- |
+| `GET`  | `/`              | API health check              |
+| `POST` | `/analyze`       | Analyze one requirement       |
+| `POST` | `/analyze-batch` | Analyze multiple requirements |
 
-1. Enter multiple requirements.
-2. Analyze all requirements.
-3. View ML classifications.
-4. View severity levels.
-5. View detected issues.
-6. View vague words.
-7. View clarification suggestions.
-8. View potential conflicts.
-9. Download the generated report.
+Interactive API documentation is available through Swagger when the API is running.
+
+---
+
+## 🔄 Automation
+
+ReqLens can automatically monitor the requirement input file:
+
+```text
+requirements_input.txt
+        ↓
+📝 File modified
+        ↓
+🔄 Automation triggered
+        ↓
+🔎 Requirements analyzed
+        ↓
+📄 TXT report
+        ↓
+📑 PDF report
+        ↓
+📋 Log generated
+```
+
+---
+
+## 🧪 Testing
+
+ReqLens currently has:
+
+**18 automated tests — 18 passed ✅**
+
+Tests cover:
+
+* Core requirement analysis
+* ML prediction
+* Conflict detection
+* FastAPI endpoints
+* API validation
+* Batch analysis
+* Automation
+* TXT/PDF report generation
+
+Run:
+
+```bash
+pytest
+```
+
+---
+
+## 🛠️ Tech Stack
+
+```text
+🐍 Python
+🤖 Scikit-learn
+📊 Pandas / NumPy
+🧠 TF-IDF + Logistic Regression
+⚡ FastAPI
+🌐 Streamlit
+📄 ReportLab
+🧪 Pytest
+🔧 Git / GitHub
+```
 
 ---
 
@@ -296,339 +277,100 @@ The interface allows users to:
 reqlens/
 │
 ├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── config.py
 │   ├── analyzer.py
-│   ├── reqlens.py
+│   ├── api.py
 │   ├── automation.py
-│   ├── ui.py
+│   ├── config.py
+│   ├── explanation.py
+│   ├── report_generator.py
+│   ├── reqlens.py
 │   ├── train_model.py
-│   └── predict.py
+│   └── ui.py
+│
+├── data/
+│   ├── dataset.csv
+│   └── test_requirements.csv
 │
 ├── models/
 │   ├── model.pkl
 │   └── vectorizer.pkl
 │
-├── data/
-│   └── dataset.csv
+├── tests/
+│   ├── test_api.py
+│   ├── test_automation.py
+│   └── test_reqlens.py
 │
-├── reports/
-│   └── reqlens_report.txt
-│
-├── logs/
-│   └── reqlens.log
-│
-├── requirements_input.txt
 ├── requirements.txt
-└── README.md
+├── requirements_input.txt
+├── pytest.ini
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## 🔧 Technologies Used
+## ▶️ Run Locally
 
-### Programming Language
-
-* Python
-
-### Machine Learning
-
-* Scikit-learn
-* TF-IDF
-* Logistic Regression
-
-### Data Processing
-
-* Pandas
-
-### Model Persistence
-
-* Joblib
-
-### User Interface
-
-* Streamlit
-
-### Development Tools
-
-* VS Code
-* Git
-* GitHub
-
----
-
-## 🚀 Setup
-
-### 1. Clone the repository
+### 1️⃣ Clone
 
 ```bash
-git clone <your-github-repository-url>
+git clone https://github.com/<YOUR_GITHUB_USERNAME>/reqlens.git
 cd reqlens
 ```
 
-### 2. Create a virtual environment
+### 2️⃣ Create environment
 
 ```bash
 python -m venv venv
 ```
 
-### 3. Activate the virtual environment
-
-On Windows PowerShell:
+### 3️⃣ Activate
 
 ```powershell
 .\venv\Scripts\Activate.ps1
 ```
 
-### 4. Install dependencies
+### 4️⃣ Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## 🧪 Train the Model
-
-From the project root:
-
-```bash
-python app/train_model.py
-```
-
-This trains the model and creates:
-
-```text
-models/model.pkl
-models/vectorizer.pkl
-```
-
----
-
-## 🔮 Test Predictions
-
-Run:
-
-```bash
-python app/predict.py
-```
-
-This uses the trained model to classify sample requirements.
-
----
-
-## 🖥️ Run the Web Interface
-
-From the project root:
+### 5️⃣ Run Streamlit
 
 ```bash
 streamlit run app/ui.py
 ```
 
-Streamlit will start the local web application.
+### 6️⃣ Run API
 
----
+```bash
+uvicorn api:app --reload --app-dir app
+```
 
-## ⚡ Run Automation
-
-From another terminal with the virtual environment activated:
+### 7️⃣ Run automation
 
 ```bash
 python app/automation.py
 ```
 
-ReqLens will monitor:
+### 8️⃣ Run tests
 
-```text
-requirements_input.txt
+```bash
+pytest
 ```
-
-Modify the file to trigger automatic analysis.
-
-Press:
-
-```text
-Ctrl + C
-```
-
-to stop the automation process.
-
----
-
-## 📝 Example Input
-
-Add requirements such as:
-
-```text
-The application must display the dashboard within 3 seconds.
-The website should be incredibly easy to navigate.
-Users should be able to upload reports.
-The system must retain customer records for 5 years.
-The application should provide outstanding performance.
-The system should send notifications.
-```
-
-ReqLens analyzes each requirement and generates classifications, severity levels, issues, and suggestions.
-
----
-
-## 📄 Generated Report
-
-The analysis report is automatically generated at:
-
-```text
-reports/reqlens_report.txt
-```
-
-The report contains:
-
-* Requirement
-* Category
-* Severity
-* Detected issue
-* Vague words
-* Suggestions
-* Potential conflicts
-
----
-
-## 📋 Severity Levels
-
-ReqLens currently maps categories to severity levels as follows:
-
-| Category           | Severity |
-| ------------------ | -------- |
-| CLEAR              | LOW      |
-| MISSING_CONSTRAINT | MEDIUM   |
-| VAGUE              | HIGH     |
-
-These are application-defined severity levels intended to prioritize clarification work.
-
----
-
-## 🔍 Example Workflow
-
-```text
-Requirement:
-"The application should load quickly."
-
-        ↓
-
-ML Classification:
-VAGUE
-
-        ↓
-
-Severity:
-HIGH
-
-        ↓
-
-Detected Issue:
-The requirement contains vague or subjective wording.
-
-        ↓
-
-Detected Word:
-quickly
-
-        ↓
-
-Suggestion:
-Specify a maximum response or loading time,
-such as 2 seconds.
-```
-
----
-
-## 🧩 Design Approach
-
-ReqLens combines multiple techniques rather than relying on a single component.
-
-### Machine Learning
-
-Used for:
-
-```text
-Requirement → Category
-```
-
-### Rule-Based Analysis
-
-Used for:
-
-```text
-Category → Specific issue
-```
-
-### Automation
-
-Used for:
-
-```text
-File change → Automatic analysis
-```
-
-### Reporting
-
-Used for:
-
-```text
-Analysis → Persistent report
-```
-
-This separation keeps the project modular and makes individual components easier to test and improve.
 
 ---
 
 ## 🔮 Future Improvements
 
-Potential future enhancements include:
-
-* Larger real-world requirement datasets
-* More requirement categories
-* Advanced NLP models
-* Transformer-based classification
-* Better conflict detection
-* Requirement completeness scoring
-* Confidence scores
-* Improved clarification generation
-* REST API
-* Database storage
-* User authentication
-* Cloud deployment
-* CI/CD automation
-* Integration with GitHub Issues or project management tools
+* 🧠 Transformer/LLM-based analysis
+* 📚 Larger real-world requirement dataset
+* 🔎 Advanced conflict detection
+* 🔗 GitHub requirement monitoring
+* 🔄 CI/CD integration
+* ☁️ Cloud deployment
+* 👤 Authentication & requirement history
 
 ---
 
-## 👨‍💻 Project Purpose
-
-ReqLens was developed as a practical project to explore the complete workflow of an AI/ML application:
-
-```text
-Problem Definition
-      ↓
-Dataset Creation
-      ↓
-Data Processing
-      ↓
-Model Training
-      ↓
-Model Evaluation
-      ↓
-Rule-Based Analysis
-      ↓
-Automation
-      ↓
-User Interface
-      ↓
-Report Generation
-      ↓
-Testing
-      ↓
-Deployment
-```
-
-The project demonstrates how Machine Learning, NLP-style rule analysis, software engineering, and automation can be combined into a single practical application.
