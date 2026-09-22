@@ -1,0 +1,151 @@
+requirement,label
+"The website should load within 2 seconds.",CLEAR
+"The API should return results within 500 milliseconds.",CLEAR
+"The system should support 1000 concurrent users.",CLEAR
+"Users can upload files up to 10 MB in PDF format.",CLEAR
+"The password must contain at least 12 characters.",CLEAR
+"The application must process each payment within 3 seconds.",CLEAR
+"The report should be generated in PDF format.",CLEAR
+"The system must retain transaction records for 7 years.",CLEAR
+"The service should allow a maximum of 5 login attempts per minute.",CLEAR
+"The database backup must run every 24 hours.",CLEAR
+"The website should load quickly.",VAGUE
+"The application should be easy to use.",VAGUE
+"The system should be highly efficient.",VAGUE
+"The interface should be user-friendly.",VAGUE
+"The API should respond very fast.",VAGUE
+"The application should handle a large number of users.",VAGUE
+"The system should provide excellent performance.",VAGUE
+"The website should have a simple design.",VAGUE
+"The application should be highly secure.",VAGUE
+"The report should be generated soon.",VAGUE
+"Users should be able to upload files.",MISSING_CONSTRAINT
+"The system should support many users.",MISSING_CONSTRAINT
+"The application should store customer data.",MISSING_CONSTRAINT
+"Users should receive notifications.",MISSING_CONSTRAINT
+"The system should allow users to export reports.",MISSING_CONSTRAINT
+"The application should process payments.",MISSING_CONSTRAINT
+"Users should be able to reset their password.",MISSING_CONSTRAINT
+"The system should back up the database.",MISSING_CONSTRAINT
+"The website should allow users to search products.",MISSING_CONSTRAINT
+"The application should retain user records.",MISSING_CONSTRAINT
+"The login page must lock an account after 5 failed attempts.",CLEAR
+"The API must handle 500 requests per second.",CLEAR
+"The application must send an email within 1 minute after registration.",CLEAR
+"Users must be logged out after 30 minutes of inactivity.",CLEAR
+"The search results must appear within 1 second.",CLEAR
+"The system must store passwords using a secure hashing algorithm.",CLEAR
+"Uploaded images must not exceed 5 MB.",CLEAR
+"The payment request must time out after 10 seconds.",CLEAR
+"The application must support Chrome, Firefox, and Edge.",CLEAR
+"Daily database backups must be retained for 30 days.",CLEAR
+"The notification service must deliver messages within 5 seconds.",CLEAR
+"Users must receive a password reset link that expires after 15 minutes.",CLEAR
+"The system must process 10,000 transactions per hour.",CLEAR
+"Reports must include data from the selected date range.",CLEAR
+"The API must return HTTP 400 for invalid input.",CLEAR
+"The application must allow a user to download reports as CSV files.",CLEAR
+"The system must keep an audit log for every administrative action.",CLEAR
+"Product searches must return no more than 50 results per page.",CLEAR
+"The application must automatically retry a failed request up to 3 times.",CLEAR
+"Session tokens must expire after 24 hours.",CLEAR
+"The website should be very fast.",VAGUE
+"The application should be simple and convenient.",VAGUE
+"The system should provide smooth performance.",VAGUE
+"Users should have a pleasant experience.",VAGUE
+"The application should work efficiently.",VAGUE
+"The website should look professional.",VAGUE
+"The system should be highly reliable.",VAGUE
+"The search feature should be extremely quick.",VAGUE
+"The application should provide strong security.",VAGUE
+"Reports should be generated without delay.",VAGUE
+"The system should handle a huge workload.",VAGUE
+"The interface should be intuitive.",VAGUE
+"The application should have minimal downtime.",VAGUE
+"Notifications should be delivered promptly.",VAGUE
+"The system should be scalable.",VAGUE
+"The website should have an attractive layout.",VAGUE
+"The application should respond instantly.",VAGUE
+"Users should be able to easily find information.",VAGUE
+"The system should process requests efficiently.",VAGUE
+"The application should provide fast search results.",VAGUE
+"Users should be able to create accounts.",MISSING_CONSTRAINT
+"The system should allow users to delete their accounts.",MISSING_CONSTRAINT
+"The application should send email notifications.",MISSING_CONSTRAINT
+"Users should be able to download documents.",MISSING_CONSTRAINT
+"The system should allow administrators to manage users.",MISSING_CONSTRAINT
+"The application should support online payments.",MISSING_CONSTRAINT
+"Users should be able to search for products.",MISSING_CONSTRAINT
+"The system should generate monthly reports.",MISSING_CONSTRAINT
+"The application should store uploaded images.",MISSING_CONSTRAINT
+"Users should receive alerts when an order changes.",MISSING_CONSTRAINT
+"The system should allow users to change their passwords.",MISSING_CONSTRAINT
+"The application should provide a dashboard.",MISSING_CONSTRAINT
+"Users should be able to edit their profiles.",MISSING_CONSTRAINT
+"The system should export customer information.",MISSING_CONSTRAINT
+"The application should allow users to reset passwords.",MISSING_CONSTRAINT
+"Administrators should be able to view audit logs.",MISSING_CONSTRAINT
+"The system should archive old records.",MISSING_CONSTRAINT
+"Users should be able to filter search results.",MISSING_CONSTRAINT
+"The application should allow customers to upload documents.",MISSING_CONSTRAINT
+"The system should send a confirmation after payment.",MISSING_CONSTRAINT
+The system must respond within 2 seconds,CLEAR
+Users must log in using a registered email and password,CLEAR
+The application must allow users to reset their password,CLEAR
+The system must store the user's name and email address,CLEAR
+The website must display the dashboard after successful login,CLEAR
+The application must support PDF document uploads up to 10 MB,CLEAR
+The system must send an email notification within 1 minute of registration,CLEAR
+The application must reject files larger than 10 MB,CLEAR
+The system must automatically log users out after 15 minutes of inactivity,CLEAR
+The search results must display 20 records per page,CLEAR
+The application must process payments within 5 seconds,CLEAR
+The system must create a database backup every 24 hours,CLEAR
+The application must use HTTPS for all network communication,CLEAR
+The system must allow administrators to deactivate user accounts,CLEAR
+The application must display an error message when authentication fails,CLEAR
+The system must retain transaction records for 7 years,CLEAR
+The website must load the homepage within 3 seconds,CLEAR
+The system must support up to 1000 concurrent users,CLEAR
+The application must accept JPEG and PNG image files,CLEAR
+The system must generate a PDF report after the user requests it,CLEAR
+The website should load quickly,VAGUE
+The application should be very easy to use,VAGUE
+The system should provide a pleasant user experience,VAGUE
+The application should be highly efficient,VAGUE
+The website should have an attractive design,VAGUE
+The system should be extremely secure,VAGUE
+The application should respond fast,VAGUE
+The interface should be intuitive,VAGUE
+The system should be scalable,VAGUE
+The application should provide excellent performance,VAGUE
+The website should work smoothly,VAGUE
+The system should process requests soon,VAGUE
+The application should support many users,VAGUE
+The files should be large,VAGUE
+The system should be reliable,VAGUE
+The application should have a professional interface,VAGUE
+The search feature should be simple,VAGUE
+The system should provide strong security,VAGUE
+The application should be easy-to-use,VAGUE
+The website should offer a very fast experience,VAGUE
+Users should be able to upload documents,MISSING_CONSTRAINT
+The system should store user records,MISSING_CONSTRAINT
+The application should send notifications,MISSING_CONSTRAINT
+The system should process payments,MISSING_CONSTRAINT
+The website should provide search functionality,MISSING_CONSTRAINT
+The application should create backups,MISSING_CONSTRAINT
+Users should be able to upload images,MISSING_CONSTRAINT
+The system should retain transaction data,MISSING_CONSTRAINT
+The application should send email alerts,MISSING_CONSTRAINT
+The system should support file uploads,MISSING_CONSTRAINT
+The website should allow users to search products,MISSING_CONSTRAINT
+The application should process refunds,MISSING_CONSTRAINT
+The system should store uploaded files,MISSING_CONSTRAINT
+The application should generate notifications,MISSING_CONSTRAINT
+The system should perform database backups,MISSING_CONSTRAINT
+Users should be able to upload videos,MISSING_CONSTRAINT
+The application should store customer information,MISSING_CONSTRAINT
+The system should send payment notifications,MISSING_CONSTRAINT
+The website should provide a search feature,MISSING_CONSTRAINT
+The application should retain user activity records,MISSING_CONSTRAINT

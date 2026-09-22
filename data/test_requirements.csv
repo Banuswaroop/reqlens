@@ -1,0 +1,17 @@
+requirement,expected_label
+"The application must respond within 2 seconds.","CLEAR"
+"The system must retain customer records for 5 years.","CLEAR"
+"The API must return a response within 1 second.","CLEAR"
+"Users can upload PDF files up to 10 MB.","CLEAR"
+"The database must be backed up every 24 hours.","CLEAR"
+"The website should be very easy to use.","VAGUE"
+"The application should respond quickly.","VAGUE"
+"The system should provide excellent performance.","VAGUE"
+"The interface should be attractive and professional.","VAGUE"
+"The application should be highly reliable.","VAGUE"
+"Users should be able to upload reports.","MISSING_CONSTRAINT"
+"The system should send notifications.","MISSING_CONSTRAINT"
+"Users should be able to search products.","MISSING_CONSTRAINT"
+"The application should process payments.","MISSING_CONSTRAINT"
+"The system should create backups.","MISSING_CONSTRAINT"
+
