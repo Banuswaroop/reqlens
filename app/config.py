@@ -1,37 +1,35 @@
-# --------------------------------------------------
+from pathlib import Path
 
-# ReqLens Configuration
 
-# --------------------------------------------------
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-# Input file containing software requirements
 
-REQUIREMENTS_FILE = "requirements_input.txt"
+REQUIREMENTS_FILE = (
+    PROJECT_ROOT / "requirements_input.txt"
+)
 
-# Generated text analysis report
+REPORT_FILE = (
+    PROJECT_ROOT / "reports" / "reqlens_report.txt"
+)
 
-REPORT_FILE = "reports/reqlens_report.txt"
+PDF_REPORT_FILE = (
+    PROJECT_ROOT / "reports" / "reqlens_report.pdf"
+)
 
-# Generated PDF analysis report
-
-PDF_REPORT_FILE = "reports/reqlens_report.pdf"
-
-# Log file
-
-LOG_FILE = "logs/reqlens.log"
-
-# Automation polling interval in seconds
+LOG_FILE = (
+    PROJECT_ROOT / "logs" / "reqlens.log"
+)
 
 AUTOMATION_INTERVAL = 2
 
-# Trained ML model
+MODEL_FILE = (
+    PROJECT_ROOT / "models" / "model.pkl"
+)
 
-MODEL_FILE = "models/model.pkl"
+VECTORIZER_FILE = (
+    PROJECT_ROOT / "models" / "vectorizer.pkl"
+)
 
-# TF-IDF vectorizer
-
-VECTORIZER_FILE = "models/vectorizer.pkl"
-
-# Training dataset
-
-DATASET_FILE = "data/dataset.csv"
+DATASET_FILE = (
+    PROJECT_ROOT / "data" / "dataset.csv"
+)
